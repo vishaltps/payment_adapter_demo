@@ -1,4 +1,4 @@
-module PaymentAdapterDemo
+module PaymentAdapterDemo::Razorpay
   class Razorpay
     attr_accessor :api_key, :secret_key
 
