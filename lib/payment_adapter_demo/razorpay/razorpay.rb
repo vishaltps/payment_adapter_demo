@@ -2,11 +2,11 @@ module PaymentAdapterDemo
   class Razorpay
     attr_accessor :api_key, :secret_key
 
-    def initialize(**)
-      @api_key = api_key
-      @secret_key = secret_key
-      puts "api_key  = #{api_key}"
-      puts "secret_key  = #{secret_key}"
+    def initialize(**args)
+      @api_key = args[:api_key]
+      @secret_key = args[:secret_key]
+      puts "api_key  = #{args[:api_key]}"
+      puts "secret_key  = #{args[:secret_key]}"
     end
 
     def print_hello_world
