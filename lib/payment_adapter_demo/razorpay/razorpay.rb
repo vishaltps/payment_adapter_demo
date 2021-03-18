@@ -8,7 +8,9 @@ module PaymentAdapterDemo::Razorpay
     end
 
     def print_hello_world
-      return 'Hello World !!'
+      return "Hello World !! #{api_key} and #{secret_key}"
     end
+
+
   end
 end
