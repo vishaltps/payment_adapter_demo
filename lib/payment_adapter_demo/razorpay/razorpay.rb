@@ -1,3 +1,5 @@
+require 'razorpay_api'
+
 module PaymentAdapterDemo
   class Razorpay
     attr_accessor :api_key, :secret_key
@@ -12,9 +14,16 @@ module PaymentAdapterDemo
     end
 
     def preview(*)
-      puts "Its preview method"
-      a = "Its preview method"
-      return a
+      razorpay_subscription = RazorpayApi.create_subscription(
+          credentials,
+          subscription_plan,
+          subscriber,
+          opts.dig(:trial_period_duration)
+        )
+    end
+
+    def credentials
+      {api_key: api_key, secret_key: secret_key}
     end
   end
 end
