@@ -1,5 +1,5 @@
 module PaymentAdapterDemo::Razorpay
-	class ApiClient
+	class ApiClientAbcd
 		attr_reader :config, :credentials
 
 		def initialize(config, credentials)
