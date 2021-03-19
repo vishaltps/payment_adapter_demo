@@ -8,7 +8,7 @@ module PaymentAdapterDemo
     end
 
     def print_hello_world
-      return "Hello World !! #{api_key} and #{secret_key}"
+      return "Hello World new !! #{api_key} and #{secret_key}"
     end
 
     def preview(*)
