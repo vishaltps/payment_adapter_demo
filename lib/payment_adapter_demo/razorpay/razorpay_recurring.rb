@@ -10,11 +10,12 @@ module PaymentAdapterDemo::Razorpay
       @enviroment = args[:enviroment]
     end
 
-    def preview(subscription_plan:, subscriber:, params:, opts:)
+    def preview(subscription_plan:, subscriber:, start_time:, opts:)
       razorpay_subscription = RazorpayApi.create_subscription(
           credentials,
           subscription_plan,
           subscriber,
+          start_time,
           opts.dig(:trial_period_duration)
         )
 

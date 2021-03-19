@@ -5,6 +5,7 @@ module PaymentAdapterModule::Razorpay
 		attr_reader :config, :credentials
 
 		def initialize(config, credentials)
+			binding.pry
 			@config = config
 			@credentials = credentials
 		end
