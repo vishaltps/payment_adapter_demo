@@ -2,7 +2,7 @@
 
 module PaymentAdapterDemo
   class Razorpay
-    include RazorpayApi
+    include PaymentAdapterDemo::RazorpayApi
 
     attr_accessor :api_key, :secret_key
 
