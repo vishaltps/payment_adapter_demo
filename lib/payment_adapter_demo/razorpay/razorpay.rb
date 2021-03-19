@@ -12,7 +12,7 @@ module PaymentAdapterDemo
     end
 
     def preview(*)
-      nil
+      "Its preview method"
     end
   end
 end
