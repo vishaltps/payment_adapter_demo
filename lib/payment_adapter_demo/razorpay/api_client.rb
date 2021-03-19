@@ -1,11 +1,10 @@
 require 'httparty'
 
-module PaymentAdapterModule::Razorpay
+module PaymentAdapterDemo::Razorpay
 	class ApiClient
 		attr_reader :config, :credentials
 
 		def initialize(config, credentials)
-			binding.pry
 			@config = config
 			@credentials = credentials
 		end
