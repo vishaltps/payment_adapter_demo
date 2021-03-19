@@ -7,7 +7,7 @@ module PaymentAdapterDemo
 	class Error < StandardError; end
 # Your code goes here...
   class Payment
-  	def initalize(args**)
+  	def initialize(args**)
   		@adapter = args[:adapter]
   	end
   end
