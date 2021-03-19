@@ -2,11 +2,12 @@
 
 module PaymentAdapterDemo::Razorpay
   class RazorpayOnetime
-    attr_accessor :api_key, :secret_key
+    attr_accessor :api_key, :secret_key, :enviroment
 
     def initialize(**args)
       @api_key = args[:api_key]
       @secret_key = args[:secret_key]
+      @enviroment = args[:enviroment]
     end
 
     def print_hello_world
@@ -23,7 +24,7 @@ module PaymentAdapterDemo::Razorpay
     end
 
     def credentials
-      {api_key: api_key, secret_key: secret_key}
+      {api_key: api_key, secret_key: secret_key, enviroment: enviroment}
     end
   end
 end

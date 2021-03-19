@@ -8,6 +8,7 @@ module PaymentAdapterDemo::Razorpay
     end
 
 		def create_subscription(subscription_plan, subscriber, trial_period_duration = nil)
+			binding.pry
       razorpay_plan_id = subscription_plan.metadata.dig('razorpay', 'plan_id')
       total_count = calculate_subscription_total_count(subscription_plan)
       params = { plan_id: razorpay_plan_id, total_count: total_count }
@@ -25,6 +26,10 @@ module PaymentAdapterDemo::Razorpay
         error_logger(system: 'RAZORPAY', message: "Recieved #{response.code} while creating recurring subscription #{credentials['app_key']}:#{params[:plan_id]}")
         nil
       end
+    end
+
+    def client
+      @client ||= ApiClient.new(config, credentials)
     end
 	end
 end

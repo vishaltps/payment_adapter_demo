@@ -2,16 +2,17 @@
 
 module PaymentAdapterDemo::Razorpay
   class RazorpayRecurring
-    attr_accessor :api_key, :secret_key
+    attr_accessor :api_key, :secret_key, :enviroment
 
     def initialize(**args)
       @api_key = args[:api_key]
       @secret_key = args[:secret_key]
+      @enviroment = args[:enviroment]
     end
 
     def preview(subscription_plan:, subscriber:, params:, opts:)
       razorpay_subscription = RazorpayApi.create_subscription(
-          {api_key: api_key, secret_key: secret_key},
+          credentials,
           subscription_plan,
           subscriber,
           opts.dig(:trial_period_duration)
@@ -22,6 +23,10 @@ module PaymentAdapterDemo::Razorpay
         subscription_attempt = params[:subscription_attempt]
         subscription_attempt&.update(external_reference_id: razorpay_subscription.id)
         nil
+    end
+
+    def credentials
+    	{api_key: api_key, secret_key: secret_key, enviroment: enviroment}
     end
   end
 end

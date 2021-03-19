@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
+require 'pry'
 require_relative "payment_adapter_demo/version"
+require_relative "payment_adapter_demo/constants"
 require_relative "payment_adapter_demo/razorpay/razorpay_onetime"
 require_relative "payment_adapter_demo/razorpay/razorpay_api"
 require_relative "payment_adapter_demo/razorpay/razorpay_recurring"
