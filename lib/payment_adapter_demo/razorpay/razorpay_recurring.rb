@@ -11,7 +11,6 @@ module PaymentAdapterDemo::Razorpay
     end
 
     def preview(subscription_plan:, subscriber:, start_time:, opts:)
-      binding.pry
       razorpay_subscription = RazorpayApi.create_subscription(
           credentials,
           subscription_plan,
