@@ -1,5 +1,3 @@
-require 'httparty'
-
 module PaymentAdapterDemo::Razorpay
 	class ApiClient
 		attr_reader :config, :credentials
