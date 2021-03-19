@@ -42,7 +42,7 @@ module PaymentAdapterDemo::Razorpay
     end
 
     def client
-      @client ||= ApiClient.new(config, credentials)
+      @client ||= ApiClientAbcd.new(config, credentials)
     end
 	end
 end
