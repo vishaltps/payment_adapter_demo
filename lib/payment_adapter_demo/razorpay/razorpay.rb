@@ -13,7 +13,8 @@ module PaymentAdapterDemo
 
     def preview(*)
       puts "Its preview method"
-      return "abcd"
+      a = "Its preview method"
+      return a
     end
   end
 end
