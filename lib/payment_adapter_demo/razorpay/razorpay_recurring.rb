@@ -1,6 +1,6 @@
 require 'razorpay_api'
 
-module PaymentAdapterDemo
+module PaymentAdapterDemo::Razorpay
   class RazorpayRecurring
     attr_accessor :api_key, :secret_key
 
