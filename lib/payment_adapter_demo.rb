@@ -6,4 +6,9 @@ require_relative "payment_adapter_demo/razorpay/razorpay"
 module PaymentAdapterDemo
 	class Error < StandardError; end
 # Your code goes here...
+  class Payment
+  	def initalize(args**)
+  		@adapter = args[:adapter]
+  	end
+  end
 end
