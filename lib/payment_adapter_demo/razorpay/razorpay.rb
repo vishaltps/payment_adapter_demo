@@ -1,7 +1,9 @@
-require 'razorpay_api'
+# require 'razorpay_api'
 
 module PaymentAdapterDemo
   class Razorpay
+    include RazorpayApi
+
     attr_accessor :api_key, :secret_key
 
     def initialize(**args)
