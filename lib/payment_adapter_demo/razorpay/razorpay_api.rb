@@ -1,5 +1,5 @@
 require 'pry'
-require 'client'
+# require 'client'
 
 module PaymentAdapterDemo::Razorpay
 	class RazorpayApi

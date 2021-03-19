@@ -1,4 +1,4 @@
-require 'razorpay_api'
+# require 'razorpay_api'
 
 module PaymentAdapterDemo::Razorpay
   class RazorpayRecurring
