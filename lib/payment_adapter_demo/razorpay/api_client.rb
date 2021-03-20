@@ -3,8 +3,8 @@ module PaymentAdapterDemo::Razorpay
 		attr_reader :config, :credentials
 
 		def initialize(config, credentials)
-			@config = config
-			@credentials = credentials
+			@config = config.with_indifferent_access
+			@credentials = credentials.with_indifferent_access
 		end
 
 		def get(path)

@@ -17,7 +17,6 @@ module PaymentAdapterDemo::Razorpay
       #   start_time += trial_period_duration if trial_period_duration
       #   params[:start_at] = start_time.to_i if start_time > Time.zone.now
       # end
-      binding.pry
       response = client.post('/v1/subscriptions', params)
       if response.code == 200
         binding.pry
