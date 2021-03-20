@@ -10,7 +10,7 @@ module PaymentAdapterDemo::Razorpay
 		def create_subscription(subscription_plan, subscriber, start_time, trial_period_duration = nil)
       razorpay_plan_id = subscription_plan.metadata.dig('razorpay', 'plan_id')
       total_count = calculate_subscription_total_count(subscription_plan)
-      params = { plan_id: razorpay_plan_id, total_count: total_count, start_at: start_time }
+      params = { plan_id: razorpay_plan_id, total_count: total_count, start_at: (Time.now + 1.hour) }
 
       # if subscriber.present?
       #   start_time = subscriber.most_suitable_start_timestamp(subscription_plan)
