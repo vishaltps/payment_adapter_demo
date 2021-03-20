@@ -18,12 +18,12 @@ module PaymentAdapterDemo::Razorpay
 		end
 
 		def post(path, options)
-			binding.pry
 			response = HTTParty.post(
 				config['root_url'] + path,
 				body: options,
 				basic_auth: { username: credentials['api_key'], password: credentials['secret_key'] }
 				)
+			binding.pry
 			return response unless response.code >= 500
 
 			raise BadGatewayError.new(gateway: 'razorpay', path: path, response_code: response.code, response_body: response.parsed_response)
